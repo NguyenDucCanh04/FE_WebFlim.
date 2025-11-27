@@ -9,7 +9,8 @@
                 <div class="theloai-header">
                   <h4 class="mb-0 d-flex align-items-baseline gap-2">
                     <i class="bx bx-film fs-5 text-primary" aria-hidden="true"></i>
-                    <span class="theloai-title">Danh sách phim - {{ theLoai?.ten_the_loai || theLoai?.ten || 'Không xác định' }}</span>
+                    <span class="theloai-title text-nowrap">Danh Sách Phim - {{ theLoai?.ten_the_loai || theLoai?.ten ||
+                      'Không xác định' }}</span>
                     <span class="badge bg-light text-muted small ms-2">{{ totalCount }} phim</span>
                   </h4>
 
@@ -20,15 +21,19 @@
                   <div class="row row-cols-lg-2 row-cols-xl-auto g-2">
                     <div class="col">
                       <div class="position-relative">
-                        <input :value="search_tag" @input="onSearchInput" type="text" class="form-control ps-5" placeholder="Tìm phim..."> 
-                        <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span>
+                        <input :value="search_tag" @input="onSearchInput" type="text" class="form-control ps-5"
+                          placeholder="Tìm phim...">
+                        <span class="position-absolute top-50 product-show translate-middle-y"><i
+                            class="bx bx-search"></i></span>
                       </div>
                     </div>
                     <div class="col">
                       <div class="btn-group" role="group">
                         <button type="button" class="btn btn-white">Sắp Xếp</button>
                         <div class="btn-group" role="group">
-                          <button id="btnGroupDropSort" type="button" class="btn btn-white dropdown-toggle dropdown-toggle-nocaret px-1" data-bs-toggle="dropdown" aria-expanded="false">
+                          <button id="btnGroupDropSort" type="button"
+                            class="btn btn-white dropdown-toggle dropdown-toggle-nocaret px-1" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             <i class='bx bx-chevron-down'></i>
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="btnGroupDropSort">
@@ -44,16 +49,21 @@
                       <div class="btn-group" role="group">
                         <button type="button" class="btn btn-white">Năm</button>
                         <div class="btn-group" role="group">
-                          <button id="btnGroupYear" type="button" class="btn btn-white dropdown-toggle dropdown-toggle-nocaret px-1" data-bs-toggle="dropdown" aria-expanded="false">
+                          <button id="btnGroupYear" type="button"
+                            class="btn btn-white dropdown-toggle dropdown-toggle-nocaret px-1" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             <i class="bx bx-slider"></i>
                           </button>
-                          <ul class="dropdown-menu dropdown-menu-xxl-end" style="width: 320px;" aria-labelledby="btnGroupYear">
+                          <ul class="dropdown-menu dropdown-menu-xxl-end" style="width: 320px;"
+                            aria-labelledby="btnGroupYear">
                             <li>
                               <div class="dropdown-header p-3">
                                 <div class="row">
-                                  <div class="col-5"><input v-model.number="begin" class="form-control" placeholder="Năm từ" type="number"></div>
+                                  <div class="col-5"><input v-model.number="begin" class="form-control"
+                                      placeholder="Năm từ" type="number"></div>
                                   <div class="col-2 d-flex align-items-center justify-content-center">-</div>
-                                  <div class="col-5"><input v-model.number="end" class="form-control" placeholder="Năm đến" type="number"></div>
+                                  <div class="col-5"><input v-model.number="end" class="form-control"
+                                      placeholder="Năm đến" type="number"></div>
                                 </div>
                               </div>
                             </li>
@@ -73,7 +83,8 @@
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4 mt-3">
       <template v-for="(value, index) in sxandgido" :key="value.id || value.uid || index">
         <div class="col d-flex">
-          <router-link :to="`/chi-tiet-phim/${value.id || value.uid || value._id}`" class="movie-card-link w-100 text-decoration-none">
+          <router-link :to="`/chi-tiet-phim/${value.id || value.uid || value._id}`"
+            class="movie-card-link w-100 text-decoration-none">
             <article class="card movie-card m-0">
               <div class="movie-poster-wrap position-relative">
                 <img :src="value.poster_url || value.hinh_anh || value.poster" alt="Poster" class="movie-poster" />
@@ -86,7 +97,8 @@
                   <div class="d-flex justify-content-between align-items-center mt-auto">
                     <div class="movie-meta small text-light">{{ value.the_loai ? value.the_loai : '' }}</div>
                     <div class="rating text-warning small">
-                      <template v-for="i in Math.max(0, Math.min(5, value.sao_danh_gia || 0))" :key="i"><i class="bx bxs-star"></i></template>
+                      <template v-for="i in Math.max(0, Math.min(5, value.sao_danh_gia || 0))" :key="i"><i
+                          class="bx bxs-star"></i></template>
                     </div>
                   </div>
                 </div>
@@ -96,7 +108,9 @@
         </div>
       </template>
 
-      <div v-if="!isLoading && sxandgido.length === 0" class="col-12 text-center text-muted py-5">Không có phim cho thể loại này.</div>
+      <div v-if="!isLoading && sxandgido.length === 0" class="col-12 text-center text-muted py-5">Không có phim cho thể
+        loại
+        này.</div>
     </div>
 
     <!-- Pagination -->
@@ -253,28 +267,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.poster { width: 100%; height: 260px; object-fit: cover; }
-.theloai-header .theloai-title { font-weight: 600; font-size: 1.05rem; }
-.theloai-header .badge { font-size: 0.78rem; padding: 0.25rem 0.5rem; }
-@media (max-width: 576px) {
-  .theloai-header .theloai-title { display: block; }
-}
-
-/* Movie card styles */
-.movie-card-link { display: block; }
-.movie-card { border: 0; background: transparent; overflow: hidden; border-radius: 8px; }
-.movie-poster-wrap { position: relative; overflow: hidden; border-radius: 8px; }
-.movie-poster { width: 100%; height: 260px; object-fit: cover; display: block; transition: transform .28s ease; }
-.movie-card:hover .movie-poster { transform: scale(1.04); }
-.badge-new { background: #ffc107; color: #000; padding: 0.25rem 0.5rem; border-radius: 4px; font-weight:600; font-size:0.75rem; }
-.movie-overlay { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 12px; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.75) 100%); height: 100%; display: flex; flex-direction: column; }
-.movie-title { color: #fff; font-size: 0.98rem; font-weight: 700; }
-.movie-meta { color: rgba(255,255,255,0.9); }
-.rating i { font-size: 14px; }
-.movie-card { transition: transform .18s ease, box-shadow .18s ease; }
-.movie-card:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
-@media (max-width: 576px) {
-  .movie-poster { height: 200px; }
-}
-</style>
+<style scoped></style>

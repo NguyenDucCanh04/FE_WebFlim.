@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router"; 
+import { createRouter, createWebHistory } from "vue-router";
 import kiemTraKhachHang from "./kiemTraKhachHang";
 import kiemTraAdmin from "./kiemTraAdmin";
 const routes = [
@@ -23,11 +23,11 @@ const routes = [
         component: () => import('../components/KhachHang/DangNhap/index.vue'),
         meta: { layout: 'blank' }
     },
-     {
+    {
         path: '/admin/the-loai',
         component: () => import('../components/Admin/TheLoai/index.vue'),
         beforeEnter: kiemTraAdmin,
-       
+
     },
     {
         path: '/khach-hang/profile',
@@ -35,7 +35,7 @@ const routes = [
         meta: { layout: 'client' },
         beforeEnter: kiemTraKhachHang,
     },
-     {
+    {
         path: '/chi-tiet-phim/:id',
         component: () => import('../components/TrangChu/ChiTietPhim/index.vue'),
         meta: { layout: 'client' },
@@ -47,7 +47,7 @@ const routes = [
         meta: { layout: 'client' },
         props: true,
         beforeEnter: kiemTraKhachHang
-    }, 
+    },
     // Route to list films by category (used by MenuClient links like /the-loai/123)
     {
         path: '/the-loai/:id_the_loai',
@@ -60,7 +60,27 @@ const routes = [
         component: () => import('../components/TrangChu/TheLoaiPhim/index.vue'),
         meta: { layout: 'client' },
         props: true
-    }
+    },
+    {
+        path: '/khach-hang/quen-mat-khau',
+        component: () => import('../components/KhachHang/QuenMatKhau/index.vue'),
+        meta: { layout: 'blank' }
+    },
+    {
+        path: '/khach-hang/lay-lai-mat-khau',
+        component: () => import('../components/KhachHang/LayLaiMatKhau/index.vue'),
+        meta: { layout: 'blank' }
+    },
+      {
+        path: '/admin/phim',
+        component: () => import('../components/Admin/Phim/index.vue'),
+        beforeEnter: kiemTraAdmin,
+    },
+    {
+        path: '/admin/phan-quyen',
+        component: () => import('../components/Admin/PhanQuyen/index.vue'),
+        beforeEnter: kiemTraAdmin,
+    },
 
 ]
 

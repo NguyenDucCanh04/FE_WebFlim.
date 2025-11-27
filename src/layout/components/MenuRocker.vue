@@ -68,10 +68,10 @@
 		<nav class="navbar navbar-expand-xl w-100">
 			<ul class="navbar-nav justify-content-start flex-grow-1 gap-1">
 				<li class="nav-item">
-					<a class="nav-link" href="/admin/danh-gia">
+					<a class="nav-link" href="/admin/phan-quyen">
 						<div class="parent-icon"><i class="fa-solid fa-ranking-star"></i>
 						</div>
-						<div class="menu-title">Đánh Giá</div>
+						<div class="menu-title">Phân Quyền</div>
 					</a>
 				</li>
 			</ul>

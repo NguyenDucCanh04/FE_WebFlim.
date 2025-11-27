@@ -69,10 +69,7 @@
                                         class='bx bx-log-out-circle'></i><span>Đăng
                                         Xuất</span></a>
                             </li>
-                            <li><a v-on:click="dangXuatAll()" class="dropdown-item"><i
-                                        class='bx bx-log-out-circle'></i><span>Đăng Xuất Tất
-                                        Cả</span></a>
-                            </li>
+                          
                         </ul>
                     </div>
                 </template>
