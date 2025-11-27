@@ -116,80 +116,73 @@
         </div>
       </div>
 
-     <!-- PHIM SẮP CHIẾU (chỉ hiển thị khi không có tìm kiếm) -->
-<div v-if="!searchQuery.trim()" class="container mt-5 mb-5 pt-4">
-  <div class="text-center mb-4">
-    <h2 class="section-title">
-      <i class="fas fa-calendar-alt me-2"></i> PHIM SẮP CHIẾU
-    </h2>
-    <p class="text-muted">{{ phimSapChieu.length }} phim sắp khởi chiếu</p>
-  </div>
-
-  <!-- Loading -->
-  <div v-if="loading" class="text-center py-5">
-    <div class="spinner-border text-info" role="status"></div>
-    <p class="text-white mt-3">Đang tải danh sách phim...</p>
-  </div>
-
-  <!-- No movies -->
-  <div v-else-if="phimSapChieu.length === 0" class="text-center py-5">
-    <i class="fas fa-calendar-times fa-3x text-muted mb-3"></i>
-    <h4 class="text-white">Hiện tại không có phim sắp chiếu</h4>
-    <p class="text-muted">Hãy theo dõi để cập nhật phim mới</p>
-  </div>
-
-  <!-- Movies Grid -->
-  <div v-else class="row g-4">
-    <div v-for="phim in phimSapChieu" :key="phim.id" class="col-6 col-sm-6 col-md-4 col-lg-3">
-      <div class="card movie-card">
-        <div class="card-img-wrapper">
-
-          <img :src="phim.poster_url || '/src/IMG/default-movie.jpg'"
-               class="poster"
-               :alt="phim.ten_phim"
-               @error="$event.target.src = '/src/IMG/default-movie.jpg'" />
-
-          <!-- Overlay hover -->
-          <div class="movie-card-overlay">
-            <router-link :to="'/chi-tiet-phim/' + phim.id" class="btn btn-outline-warning btn-sm fw-bold">
-              <i class="fas fa-info-circle me-1"></i> XEM CHI TIẾT
-            </router-link>
-          </div>
-
-          <!-- Badge -->
-          <div class="position-absolute top-0 start-0 m-2">
-            <span class="badge bg-warning text-dark">
-              <i class="fas fa-clock me-1"></i>Sắp chiếu
-            </span>
-          </div>
-
+      <!-- PHIM SẮP CHIẾU (chỉ hiển thị khi không có tìm kiếm) -->
+      <div v-if="!searchQuery.trim()" class="container mt-5 mb-5 pt-4">
+        <div class="text-center mb-4">
+          <h2 class="section-title">
+            <i class="fas fa-calendar-alt me-2"></i> PHIM SẮP CHIẾU
+          </h2>
+          <p class="text-muted">{{ phimSapChieu.length }} phim sắp khởi chiếu</p>
         </div>
 
-        <div class="card-body bg-dark text-white d-flex flex-column">
-          <h5 class="card-title text-warning text-truncate" :title="phim.ten_phim">
-            {{ phim.ten_phim }}
-          </h5>
+        <!-- Loading -->
+        <div v-if="loading" class="text-center py-5">
+          <div class="spinner-border text-info" role="status"></div>
+          <p class="text-white mt-3">Đang tải danh sách phim...</p>
+        </div>
 
-          <p class="card-text text-light small">
-            {{ phim.nam_san_xuat || 'N/A' }} • {{ phim.quoc_gia || 'N/A' }}
-            <br />
-            <span class="text-warning">{{ phim.thoi_luong || 'N/A' }} phút</span>
-            <br />
-            <small class="text-info">
-              <i class="fas fa-calendar me-1"></i>
-              Khởi chiếu: {{ formatDate(phim.ngay_khoi_chieu) }}
-            </small>
-          </p>
+        <!-- No movies -->
+        <div v-else-if="phimSapChieu.length === 0" class="text-center py-5">
+          <i class="fas fa-calendar-times fa-3x text-muted mb-3"></i>
+          <h4 class="text-white">Hiện tại không có phim sắp chiếu</h4>
+          <p class="text-muted">Hãy theo dõi để cập nhật phim mới</p>
+        </div>
 
-          <button class="btn btn-secondary w-100 fw-bold mt-auto" disabled>
-            <i class="fas fa-clock me-1"></i>Sắp khởi chiếu
-          </button>
+        <!-- Movies Grid -->
+        <div v-else class="row g-4">
+          <div v-for="phim in phimSapChieu" :key="phim.id" class="col-6 col-sm-6 col-md-4 col-lg-3">
+            <div class="card movie-card">
+              <div class="card-img-wrapper">
 
+                <img :src="phim.poster_url || '/src/IMG/default-movie.jpg'" class="poster" :alt="phim.ten_phim"
+                  @error="$event.target.src = '/src/IMG/default-movie.jpg'" />
+
+
+
+                <!-- Badge -->
+                <div class="position-absolute top-0 start-0 m-2">
+                  <span class="badge bg-warning text-dark">
+                    <i class="fas fa-clock me-1"></i>Sắp chiếu
+                  </span>
+                </div>
+
+              </div>
+
+              <div class="card-body bg-dark text-white d-flex flex-column">
+                <h5 class="card-title text-warning text-truncate" :title="phim.ten_phim">
+                  {{ phim.ten_phim }}
+                </h5>
+
+                <p class="card-text text-light small">
+                  {{ phim.nam_san_xuat || 'N/A' }} • {{ phim.quoc_gia || 'N/A' }}
+                  <br />
+                  <span class="text-warning">{{ phim.thoi_luong || 'N/A' }} phút</span>
+                  <br />
+                  <small class="text-info">
+                    <i class="fas fa-calendar me-1"></i>
+                    Khởi chiếu: {{ formatDate(phim.ngay_khoi_chieu) }}
+                  </small>
+                </p>
+
+                <button class="btn btn-secondary w-100 fw-bold mt-auto" disabled>
+                  <i class="fas fa-clock me-1"></i>Sắp khởi chiếu
+                </button>
+
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
 
       <!-- SEARCH RESULTS (chỉ hiển thị khi có tìm kiếm) -->
@@ -227,10 +220,15 @@
                 <img :src="phim.poster_url || '/src/IMG/default-movie.jpg'" class="poster" :alt="phim.ten_phim"
                   @error="$event.target.src = '/src/IMG/default-movie.jpg'" />
                 <div class="movie-card-overlay">
-                  <router-link :to="'/chi-tiet-phim/' + phim.id" class="btn btn-outline-warning btn-sm fw-bold">
+
+                  <!-- Chỉ có phim đang chiếu mới hiển thị nút Xem Chi Tiết -->
+                  <router-link v-if="phim.trang_thai_chieu == 1" :to="'/chi-tiet-phim/' + phim.id"
+                    class="btn btn-outline-warning btn-sm fw-bold">
                     <i class="fas fa-info-circle me-1"></i> XEM CHI TIẾT
                   </router-link>
+
                 </div>
+
                 <!-- Badge trạng thái -->
                 <div class="position-absolute top-0 start-0 m-2">
                   <span v-if="phim.trang_thai_chieu == 1" class="badge bg-success">
@@ -423,6 +421,4 @@ export default {
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

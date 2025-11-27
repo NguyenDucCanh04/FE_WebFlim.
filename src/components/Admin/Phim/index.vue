@@ -253,7 +253,9 @@
                                             class="fa-solid fa-newspaper fa-2xl cursor-pointer" data-bs-toggle="modal"
                                             data-bs-target="#moTaChiTiet"></i>
                                     </td>
-                                    <td class="align-middle text-wrap">
+                                    <td
+                                        class="align-middle text-wrap d-flex flex-column justify-content-center align-items-center">
+
                                         <button v-on:click="chuyenTrangThai(value)" v-if="value.trang_thai == 1"
                                             class="btn btn-success text-nowrap mb-2">Hoạt Động</button>
                                         <button v-on:click="chuyenTrangThai(value)" v-else
@@ -411,7 +413,7 @@ export default {
         themMoiPhim() {
             const token = localStorage.getItem("token_nhan_vien");
             console.log('Token:', token); // Debug token
-            
+
             axios
                 .post("http://127.0.0.1:8000/api/admin/phim/create", this.create_phim, {
                     headers: {

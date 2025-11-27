@@ -229,7 +229,7 @@
 							<i class="bx bx-user"></i><span>Profile</span>
 						</router-link>
 					</li>
-					<li><a class="dropdown-item" href="#" @click.prevent="dangXuat"><i
+					<li><a  v-on:click="dangXuat()" class="dropdown-item" href="#" @click.prevent="dangXuat"><i
 								class='bx bx-log-out-circle'></i><span>Logout</span></a>
 					</li>
 				</ul>
