@@ -6,7 +6,7 @@
                     <div class="overlay-text text-center px-3 text-white">
                         <img src="/src/IMG/logo.png" width="120" alt="logo" class="mb-3" />
                         <h4 class="mb-1">WedFilm</h4>
-                        <p class="mb-0">Đặt vé nhanh — Trải nghiệm rạp tại nhà</p>
+                        <p class="mb-0">Đặt vé nhanh — Trải nghiệm Phim Hay</p>
                     </div>
                 </div>
 

@@ -13,7 +13,7 @@
                                     <div class="tab-title">Profile</div>
                                 </div>
                             </a>
-                        </li>                    
+                        </li>
                         <li class="nav-item" role="presentation">
                             <a class="nav-link" data-bs-toggle="tab" href="#primarycontact" role="tab"
                                 aria-selected="false" tabindex="-1">
@@ -32,14 +32,14 @@
                                     <div class="card flex-fill">
                                         <div class="card-body">
                                             <div class="d-flex flex-column align-items-center text-center">
-                                                <img src="https://jbagy.me/wp-content/uploads/2025/03/hinh-anh-cute-avatar-vo-tri-3.jpg"
+                                                <img src="https://www.shutterstock.com/shutterstock/photos/1730974153/display_1500/stock-vector-man-with-the-inscription-admin-icon-outline-man-with-the-inscription-admin-vector-icon-for-web-1730974153.jpg"
                                                     style="width: 140px; height: 140px;" alt="Admin"
                                                     class="rounded-circle p-1 bg-primary">
                                                 <div class="mt-3">
                                                     <h4>{{ profile.ho_ten }}</h4>
-                                                    <p class="text-secondary mb-1">Khách Hàng</p>
+                                                    <p class="text-secondary mb-1">Admim</p>
                                                     <p class="text-muted font-size-sm">
-                                                        Đà Nẵng</p>
+                                                        Việt Nam</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -133,7 +133,7 @@ export default {
     data() {
         return {
             profile: {},
-           
+
         }
     },
     mounted() {
@@ -142,9 +142,9 @@ export default {
     methods: {
         getDataProfile() {
             axios
-                .get("http://127.0.0.1:8000/api/khach-hang/profile/data", {
+                .get("http://127.0.0.1:8000/api/admin/profile/data", {
                     headers: {
-                        Authorization: 'Bearer ' + localStorage.getItem("token_khach_hang")
+                        Authorization: 'Bearer ' + localStorage.getItem("token_nhan_vien")
                     }
                 })
                 .then((res) => {
@@ -153,9 +153,9 @@ export default {
         },
         updateProfile() {
             axios
-                .post("http://127.0.0.1:8000/api/khach-hang/profile/update", this.profile, {
+                .post("http://127.0.0.1:8000/api/admin/profile/update", this.profile, {
                     headers: {
-                        Authorization: 'Bearer ' + localStorage.getItem("token_khach_hang")
+                        Authorization: 'Bearer ' + localStorage.getItem("token_nhan_vien")
                     }
                 })
                 .then((res) => {
@@ -169,10 +169,10 @@ export default {
                     }
                 })
         },
-       
-      
-     
-     
+
+
+
+
     }
 }
 </script>

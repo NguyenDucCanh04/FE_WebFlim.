@@ -35,6 +35,11 @@ const routes = [
         meta: { layout: 'client' },
         beforeEnter: kiemTraKhachHang,
     },
+     {
+        path: '/admin/profile',
+        component: () => import('../components/Admin/Profile/index.vue'), 
+        beforeEnter: kiemTraAdmin,
+    },
     {
         path: '/chi-tiet-phim/:id',
         component: () => import('../components/TrangChu/ChiTietPhim/index.vue'),
@@ -79,6 +84,11 @@ const routes = [
     {
         path: '/admin/phan-quyen',
         component: () => import('../components/Admin/PhanQuyen/index.vue'),
+        beforeEnter: kiemTraAdmin,
+    },
+    {
+        path: '/admin/khach-hang',
+        component: () => import('../components/Admin/KhachHang/index.vue'),
         beforeEnter: kiemTraAdmin,
     },
 

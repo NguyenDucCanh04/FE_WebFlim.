@@ -6044,3 +6044,64 @@ input::placeholder {
 
 
 }
+.booking-card {
+  background: #1c1c1c;
+  color: #eee;
+}
+
+.seat-map .screen {
+  background: linear-gradient(to bottom, #ccc, #666);
+  height: 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.seat-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  font-size: 12px;
+  transition: 0.2s;
+}
+
+.seat-btn.available {
+  background: #FFD700;
+  color: #222;
+}
+
+.seat-btn.available:hover {
+  transform: scale(1.1);
+  background: #ffea52;
+}
+
+.seat-btn.selected {
+  background: #00BF63 !important;
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.seat-btn.reserved {
+  background: #777;
+  color: #222;
+  cursor: not-allowed;
+}
+
+.seat-legend .seat {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.seat.available { background: #FFD700; }
+.seat.selected { background: #00BF63; }
+.seat.reserved { background: #777; }
+
+.seat-select {
+  background: #222;
+  color: #eee;
+  border: 1px solid #555;
+}

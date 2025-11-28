@@ -256,7 +256,7 @@ export default {
             axios
                 .post('http://127.0.0.1:8000/api/admin/dang-xuat', {}, {
                     headers: {
-                        Authorization: 'Bearer ' + localStorage.getItem("token_khach_hang")
+                        Authorization: 'Bearer ' + localStorage.getItem("token_nhan_vien")
                     }
                 })
                 .then((res) => {

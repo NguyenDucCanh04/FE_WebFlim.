@@ -29,13 +29,7 @@
                                 <a class="nav-link" href="#"> <i class='bx bx-search'></i>
                                 </a>
                             </li>
-                            <li class="nav-item dropdown dropdown-large">
-                                <router-link to="/khach-hang/gio-hang">
-                                    <a class="nav-link position-relative"> <span class="alert-count"></span>
-                                        <i class='bx bx-cart-alt'></i>
-                                    </a>
-                                </router-link>
-                            </li>
+                          
                         </ul>
                     </div>
                     <div class="user-box dropdown">
