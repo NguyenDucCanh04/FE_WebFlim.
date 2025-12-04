@@ -29,6 +29,12 @@ const routes = [
         beforeEnter: kiemTraAdmin,
 
     },
+     {
+        path: '/admin/bai-viet',
+        component: () => import('../components/Admin/BaiViet/index.vue'),
+        beforeEnter: kiemTraAdmin,
+
+    },
     {
         path: '/khach-hang/profile',
         component: () => import('../components/KhachHang/Profile/index.vue'),
@@ -43,6 +49,12 @@ const routes = [
     {
         path: '/chi-tiet-phim/:id',
         component: () => import('../components/TrangChu/ChiTietPhim/index.vue'),
+        meta: { layout: 'client' },
+        props: true
+    },
+    {
+        path: '/chi-tiet-bai-viet/:id',
+        component: () => import('../components/TrangChu/ChiTietBaiViet/index.vue'),
         meta: { layout: 'client' },
         props: true
     },
@@ -67,6 +79,17 @@ const routes = [
         props: true
     },
     {
+        path: '/khach-hang/quen-mat-khau',
+        component: () => import('../components/KhachHang/QuenMatKhau/index.vue'),
+        meta: { layout: 'blank' }
+    },
+     {
+        path: '/khach-hang/doi-mat-khau/:id_khach_hang',
+        component: () => import('../components/KhachHang/LayLaiMatKhau/index.vue'),
+        meta: { layout: 'blank' },
+        props: true
+    },
+     {
         path: '/khach-hang/quen-mat-khau',
         component: () => import('../components/KhachHang/QuenMatKhau/index.vue'),
         meta: { layout: 'blank' }

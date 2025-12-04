@@ -6105,3 +6105,132 @@ input::placeholder {
   color: #eee;
   border: 1px solid #555;
 }
+/* ẢNH NỔI BẬT */
+.featured-img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+/* ẢNH NHỎ BÊN PHẢI */
+.side-thumb {
+  width: 120px;
+  height: 80px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* CLICKABLE HOVER HIỆU ỨNG */
+.clickable {
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.clickable:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+/* GIỚI HẠN DÒNG VĂN BẢN */
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-truncate-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* BÀI VIẾT NỔI BẬT */
+.bv-featured {
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* BÀI VIẾT LIST */
+.side-post {
+  background: #111;
+  border-radius: 8px;
+  padding: 8px;
+  transition: 0.2s;
+}
+
+.side-post:hover {
+  background: #222;
+}
+/* Hiệu ứng fade-in */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Ảnh đại diện */
+.featured-wrapper {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+}
+
+.featured-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.featured-img:hover {
+  transform: scale(1.02);
+}
+
+/* Tiêu đề bài viết */
+.title-highlight {
+  font-size: 34px;
+  font-weight: 800;
+  color: #111; /* Đen nổi bật */
+  line-height: 1.3;
+  text-shadow: none;
+}
+
+/* Ngày đăng */
+.text-info {
+  font-size: 16px !important;
+  color: #555 !important; /* Gần đen nhưng nhẹ */
+  font-weight: 600;
+}
+
+/* Divider */
+.divider {
+  border-color: #aaa;
+  opacity: 0.7;
+  margin: 25px 0;
+}
+
+/* Nội dung bài viết */
+.noi-dung-bai-viet {
+  font-size: 19px;
+  line-height: 1.9;
+  color: #222; /* Đen vừa, dễ đọc */
+  font-weight: 400;
+  padding-bottom: 40px;
+  white-space: pre-line;
+}
+
+.noi-dung-bai-viet p {
+  margin-bottom: 16px;
+  color: #222;
+}
+
+.noi-dung-bai-viet br {
+  margin-bottom: 10px;
+}

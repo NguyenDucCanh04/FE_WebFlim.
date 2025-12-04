@@ -8,26 +8,24 @@
                             <div class="card-body">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <img src="/src/IMG/logo.png" width="180" alt="">
+                                        <img src="https://dzfullstack.com/assets/images/logo-img.png" width="180"
+                                            alt="">
                                     </div>
                                     <h4 class="mt-5 font-weight-bold">Thay Đổi Mật Khẩu</h4>
                                     <p class="text-muted">Nhập lại mật khẩu mới để thay đổi mật khẩu</p>
                                     <div class="mb-3 mt-3">
                                         <label class="form-label">Mật khẩu mới</label>
-                                        <input v-model="khach_hang.password" type="text" class="form-control"
-                                            placeholder="Nhập mật khẩu của bạn">
+                                        <input v-model="khach_hang.password" type="text" class="form-control" placeholder="Nhập mật khẩu của bạn">
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Xác nhận mật khẩu</label>
-                                        <input v-model="khach_hang.re_password" type="text" class="form-control"
-                                            placeholder="Nhập lại mật khẩu của bạn">
+                                        <input v-model="khach_hang.re_password" type="text" class="form-control" placeholder="Nhập lại mật khẩu của bạn">
                                     </div>
                                     <div class="d-grid gap-2">
                                         <button v-on:click="doiMatKhau()" type="button" class="btn btn-primary">Thay
                                             đổi mật khẩu</button>
                                         <router-link to="/khach-hang/dang-nhap">
-                                            <a class="btn btn-light w-100"><i class="bx bx-arrow-back mr-1"></i>Quay lại
-                                                trang
+                                            <a class="btn btn-light w-100"><i class="bx bx-arrow-back mr-1"></i>Quay lại trang
                                                 đăng nhập</a>
                                         </router-link>
                                     </div>
@@ -48,11 +46,11 @@
 import axios from 'axios';
 
 export default {
-    props: ['id_khach_hang'],
+    props : ['id_khach_hang'],
     data() {
         return {
-            khach_hang: {
-                'id': this.$route.params.id_khach_hang,
+            khach_hang : {
+                'id'    :   this.$route.params.id_khach_hang
             },
         }
     },

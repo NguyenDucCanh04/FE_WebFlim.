@@ -57,6 +57,17 @@
 		<nav class="navbar navbar-expand-xl w-100">
 			<ul class="navbar-nav justify-content-start flex-grow-1 gap-1">
 				<li class="nav-item">
+					<a class="nav-link" href="/admin/ve">
+						<div class="parent-icon"><i class="fa-solid fa-ticket"></i>
+						</div>
+						<div class="menu-title">Vé</div>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<nav class="navbar navbar-expand-xl w-100">
+			<ul class="navbar-nav justify-content-start flex-grow-1 gap-1">
+				<li class="nav-item">
 					<a class="nav-link" href="/admin/bai-viet">
 						<div class="parent-icon"><i class="fa-solid fa-newspaper"></i>
 						</div>
