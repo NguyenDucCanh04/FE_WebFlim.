@@ -1,5 +1,5 @@
 <template>
-  <div class="container py-5">
+  <div class="container py-5 article-wrapper">
 
     <!-- LOADING -->
     <div v-if="loading" class="text-center py-5">
@@ -18,8 +18,7 @@
 
         <!-- ẢNH ĐẠI DIỆN -->
         <div class="featured-wrapper mb-4">
-          <img :src="baiViet.anh_dai_dien"
-               class="featured-img" />
+          <img :src="baiViet.anh_dai_dien" class="featured-img" />
         </div>
 
         <!-- TIÊU ĐỀ -->
@@ -81,11 +80,10 @@ export default {
       return new Date(dateStr).toLocaleDateString("vi-VN");
     },
 
-    // Tự động xuống dòng + giữ định dạng đẹp
     formatContent(content) {
       if (!content) return "";
       return content
-        .replace(/\n\n/g, "<br/><br/>")  // tạo khoảng cách giữa các đoạn
+        .replace(/\n\n/g, "<br/><br/>")
         .replace(/\n/g, "<br/>");
     }
   }

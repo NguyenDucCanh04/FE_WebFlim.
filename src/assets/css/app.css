@@ -6234,3 +6234,121 @@ input::placeholder {
 .noi-dung-bai-viet br {
   margin-bottom: 10px;
 }
+/* TOPBAR – tím nhạt nhẹ */
+.topbar {
+  background-color:#333333; /* nhẹ – đẹp */
+}
+
+/* Tên PHIM MỚI – cam nổi */
+.section-title {
+  color: #ff7a00;
+  font-weight: 700;
+  margin-left: 8px;
+}
+.nav-container.primary-menu {
+  background-color: #EEEEEE !important;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+
+
+/* Hover – vàng nhẹ */
+.navbar-nav .nav-item .nav-link:hover {
+  color: #ffd200;
+}
+
+/* Mục đang chọn – cam nổi */
+.navbar-nav .nav-item .nav-link.active {
+  color: #ff7a00;
+}
+/* Tên khách hàng nổi bật */
+.user-info .user-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff; /* trắng để nổi trên nền đen */
+}
+
+/* Chữ “Khách Hàng” mờ nhẹ */
+.user-info .designattion {
+  font-size: 13px;
+  color: #bbbbbb;
+}
+
+/* Avatar hover đỏ kiểu Netflix */
+.user-box:hover .user-name {
+  color: #e50914; /* đỏ Netflix */
+}
+
+.user-box:hover .designattion {
+  color: #e50914;
+}
+/* Nút Đăng Nhập – outline đỏ */
+.btn-outline-dark {
+  border-color: #e50914 !important;
+  color: #e50914 !important;
+  font-weight: 600;
+}
+
+.btn-outline-dark:hover {
+  background-color: #e50914 !important;
+  color: white !important;
+}
+
+/* Nút Đăng Ký – đỏ đặc Netflix */
+.btn-dark {
+  background-color: #e50914 !important;
+  border-color: #e50914 !important;
+  font-weight: 600;
+}
+
+.btn-dark:hover {
+  background-color: #ff1a1a !important;  /* đỏ sáng hơn khi hover */
+  border-color: #ff1a1a !important;
+}
+
+/* 🎨 BACKGROUND MÀU ĐƠN GIẢN – ĐẸP */
+.article-wrapper {
+background: linear-gradient(135deg, #1f1f1f, #3a0000, #7a0a0a);
+
+
+
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.25);
+}
+
+/* ẢNH ĐẠI DIỆN */
+.featured-img {
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* TIÊU ĐỀ */
+.title-highlight {
+  text-shadow: 0 0 12px rgba(255, 193, 7, 0.7);
+}
+
+/* NỘI DUNG */
+.noi-dung-bai-viet {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #f1f1f1;
+}
+
+.divider {
+  border-color: rgba(255,255,255,0.2);
+  margin: 20px 0;
+}
+
+/* FADE IN */
+.fade-in {
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
